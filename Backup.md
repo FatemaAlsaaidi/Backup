@@ -53,4 +53,22 @@
 	 
 - What it includes:
 	- all committed transactions and the modifications made to the database since the last transaction log backup or full database backup.
+- Pros & cons:
+- Pros:
+	- Transaction backups capture the latest changes in the database, allowing for recovery to a point in time just before a failure or error.
+	- By backing up frequently, the window of potential data loss is significantly reduced.
+	- Transaction log backups help truncate the transaction log, preventing it from filling up and potentially impacting database performance.
+	- Transaction log backups enable restoring the database to a specific point in time, offering greater control over recovery.
+	- Transaction log backups are typically smaller than full backups, making them faster to perform.
+	- The smaller size and speed allow for more frequent backups, leading to finer granularity recovery points.
+
+- Cons:
+	- Frequent backups require more time and resources, potentially impacting server performance.
+	- The process of backing up transaction logs can consume server resources, potentially affecting other applications.
+	- While smaller than full backups, transaction logs can still grow over time, requiring adequate storage space. 
+	- For point-in-time restoration, you need a full backup as the base, and then you apply the transaction log backups.
+	- If a transaction log backup fails, it can lead to data inconsistencies or issues with the restore process.
+	- Managing frequent transaction log backups and their restoration can be more complex than managing full backups.
+	- Frequent backups and storage can increase the overall cost of data protection. 
+	
 
