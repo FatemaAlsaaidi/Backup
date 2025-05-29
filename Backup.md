@@ -26,7 +26,11 @@
 	- In an e-learning platform, a full backup is taken at the end of each semester to preserve all course materials, student records, and assessment data, ensuring that the information is available for future reference or audits.
 	- In a ticketing system, a full backup is conducted daily to capture all ticket sales, customer interactions, and event details, allowing for quick recovery in case of data loss or system issues.
 
-
+2. **Differential Backup**: Captures only the data that has changed since the last full backup.
+![DifferentialBackup](img/DifferentialBackup.PNG)
+- When it is used:
+	-Differential backups are used when a balance between storage efficiency and recovery time is needed, particularly when data changes less frequently than in an incremental approach. They are also useful for systems where a straightforward recovery process is necessary and minimizing downtime is crucial.
+-
 
 
 
