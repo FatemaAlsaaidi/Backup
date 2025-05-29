@@ -23,5 +23,16 @@
   - Requires significant storage space.
   - Not suitable for frequent backups due to performance impact.
 
+- Real-world scenario (e.g., banking system, e-learning platform, ticketing system):
+	- In a banking system, a full backup is performed weekly to ensure that all customer data, transactions, and account information are securely stored and can be restored in case of a system failure or data corruption.
+	- In an e-learning platform, a full backup is taken at the end of each semester to preserve all course materials, student records, and assessment data, ensuring that the information is available for future reference or audits.
+	- In a ticketing system, a full backup is conducted daily to capture all ticket sales, customer interactions, and event details, allowing for quick recovery in case of data loss or system issues.
+
+
+
+
+
+
+
 
 
