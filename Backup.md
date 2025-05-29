@@ -48,5 +48,8 @@
 
 3. **Transaction Log Backup**: Captures all transactions that have occurred since the last transaction log backup.
 ![TransactionLogBackup](img/TransactionLogBackup.png)
-
+- When it is used:
+	- Transaction log backups are used for point-in-time recovery, especially after data corruption or accidental changes. They are crucial for disaster recovery and can help restore a database to a specific moment before an issue occurred.
+	- 
+- 
 
