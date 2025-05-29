@@ -75,3 +75,6 @@
 	- In a banking system, transaction log backups are performed every 5 minutes to ensure that all transactions, such as deposits and withdrawals, are captured, allowing for recovery to the exact moment before any issue occurred.
 	- In an e-learning platform, transaction log backups are taken every 10 minutes to capture changes in student progress and course updates, enabling quick recovery of the latest data in case of accidental deletions or system failures.
 	- In a ticketing system, transaction log backups are conducted every 2 minutes to ensure that all ticket sales and customer interactions are recorded, allowing for precise recovery of the system to a specific point in time if needed.
+
+4. **Copy-Only Backup**: A special type of backup that does not affect the sequence of regular backups.
+![CopyOnlyBackup](img/OnlyCopyBackup.PNG)
