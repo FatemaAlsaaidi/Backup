@@ -30,7 +30,8 @@
 ![DifferentialBackup](img/DifferentialBackup.PNG)
 - When it is used:
 	-Differential backups are used when a balance between storage efficiency and recovery time is needed, particularly when data changes less frequently than in an incremental approach. They are also useful for systems where a straightforward recovery process is necessary and minimizing downtime is crucial.
--
+- What it includes:
+ - A differential backup includes all files that have been added to or modified since the last full backup was performed. It's essentially a cumulative backup, meaning each subsequent differential backup includes all changes since the last full backup, not just the changes from the previous differential backup.
 
 
 
