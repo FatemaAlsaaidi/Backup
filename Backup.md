@@ -11,3 +11,5 @@
    + Typically performed as the primary backup type.
    - Used to create a complete snapshot of the database at a specific point in time.
    - Recommended for disaster recovery and long-term storage.
+- What it includes:
+	- A full backup includes every file and folder within the system being backed up, creating a complete copy of all data. This includes files, folders, applications, and even hard drives.
