@@ -32,6 +32,15 @@
 	-Differential backups are used when a balance between storage efficiency and recovery time is needed, particularly when data changes less frequently than in an incremental approach. They are also useful for systems where a straightforward recovery process is necessary and minimizing downtime is crucial.
 - What it includes:
  - A differential backup includes all files that have been added to or modified since the last full backup was performed. It's essentially a cumulative backup, meaning each subsequent differential backup includes all changes since the last full backup, not just the changes from the previous differential backup.
+- Pros & cons:
+- Pros:
+  - Faster than full backups since only changed data is captured.
+  - Requires less storage space compared to full backups.
+  - Simplifies recovery by allowing restoration from the last full backup and the latest differential backup.
+- Cons:
+  - Recovery requires both the last full backup and the latest differential backup, which can complicate the process.
+  - If multiple differential backups are taken, they can grow in size and take longer to create.
+  - Not suitable for systems with frequent changes, as it may lead to larger backup sizes over time.
 
 
 
