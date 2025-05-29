@@ -71,4 +71,5 @@
 	- Managing frequent transaction log backups and their restoration can be more complex than managing full backups.
 	- Frequent backups and storage can increase the overall cost of data protection. 
 	
-
+- Real-world scenario (e.g., banking system, e-learning platform, ticketing system):
+	- 
