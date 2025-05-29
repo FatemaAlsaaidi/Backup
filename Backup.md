@@ -6,11 +6,9 @@
 
 ### Backup Types
 1. **Full Backup**: Captures the entire database, including all data and objects.
-![Full Backup](img/Full_Backup.PNG)
+![Full Backup](img/FullBackup.PNG)
 - When it is used: 
-   + Typically performed as the primary backup type.
-   - Used to create a complete snapshot of the database at a specific point in time.
-   - Recommended for disaster recovery and long-term storage.
+   - when a complete copy of all data is needed, offering the fastest recovery and highest data protection. It's ideal for critical systems, new system setups, major changes, and when quick data recovery is paramount.
 - What it includes:
 	- A full backup includes every file and folder within the system being backed up, creating a complete copy of all data. This includes files, folders, applications, and even hard drives.
 - Pros & cons:
