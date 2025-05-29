@@ -46,10 +46,7 @@
 	- In an e-learning platform, a differential backup is taken every night after the full backup at the end of the semester, capturing all updates to course materials and student records, allowing for quick recovery of the latest changes without restoring the entire database.
 	- In a ticketing system, a differential backup is conducted every few hours after the daily full backup, capturing all new ticket sales and customer interactions, enabling quick recovery of the latest data without the need for a full restore.
 
-
-
-
-
-
+3. **Transaction Log Backup**: Captures all transactions that have occurred since the last transaction log backup.
+![TransactionLogBackup](img/TransactionLogBackup.png)
 
 
