@@ -41,6 +41,11 @@
   - Recovery requires both the last full backup and the latest differential backup, which can complicate the process.
   - If multiple differential backups are taken, they can grow in size and take longer to create.
   - Not suitable for systems with frequent changes, as it may lead to larger backup sizes over time.
+- Real-world scenario (e.g., banking system, e-learning platform, ticketing system):
+	- In a banking system, a differential backup is performed daily after the weekly full backup to capture all transactions and account changes, ensuring that the most recent data can be quickly restored without needing to restore the entire database.
+	- In an e-learning platform, a differential backup is taken every night after the full backup at the end of the semester, capturing all updates to course materials and student records, allowing for quick recovery of the latest changes without restoring the entire database.
+	- In a ticketing system, a differential backup is conducted every few hours after the daily full backup, capturing all new ticket sales and customer interactions, enabling quick recovery of the latest data without the need for a full restore.
+
 
 
 
