@@ -6,7 +6,7 @@
 
 ### Backup Types
 1. **Full Backup**: Captures the entire database, including all data and objects.
-![FullBackup](img/FullBackup.PNG)
+   ![img/FullBackup.PNG](https://github.com/FatemaAlsaaidi/Backup/blob/master/img/FullBackup.png))
 - When it is used: 
    - when a complete copy of all data is needed, offering the fastest recovery and highest data protection. It's ideal for critical systems, new system setups, major changes, and when quick data recovery is paramount.
 - What it includes:
