@@ -85,7 +85,15 @@
 
 -<ins> What it includes:
 - All the data in the database at the point in time the backup is taken.
-
+- Pros & cons:
+	-Pros:
+		- Does not interfere with the regular backup sequence, allowing for independent backups.
+		- Useful for testing or creating a backup without affecting the existing backup chain.
+		- Can be used for one-time backups without impacting the recovery process.
+	-cons:
+		- Not suitable for regular backups, as it does not maintain the backup chain.
+		- Can lead to confusion if used inappropriately, as it does not contribute to the regular backup strategy.
+		- Recovery from a copy-only backup may require additional steps if not planned properly.
 
 
 
