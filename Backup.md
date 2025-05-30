@@ -111,6 +111,18 @@
 	- A file backup typically includes user-created and downloaded files, such as documents, spreadsheets, presentations, videos, and photos. It does not include operating system files, program files, or drivers, which are part of a system backup. 
 	- File backups focus on protecting individual files or folders, making it easier to restore specific data points in case of accidental deletion or loss.
 
+- <ins>Pros & cons:
+
+	- Pros: 
+		- Allows for selective backup and restoration of specific files or filegroups, reducing backup size and time.
+		- Using file backups can increase the speed of recovery by letting you restore only damaged files, without restoring the rest of the database.
+		- File backups increase flexibility in scheduling and media handling over full database backups, which for very large databases can become unmanageable. The increased flexibility of file or filegroup backups is also useful for large databases that contain data that has varying update characteristics.
+	- Cons:
+		- Requires careful management to ensure all necessary files are backed up.
+		- Recovery can be more complex if multiple files or filegroups are involved.
+		- Not suitable for complete database recovery, as it only captures specific parts of the database.
+
+		
 
 
 
