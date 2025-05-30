@@ -79,10 +79,17 @@
 4. **Copy-Only Backup**: A special type of backup that does not affect the sequence of regular backups.
 ![CopyOnlyBackup](img/OnlyCopyBackup.PNG)
 - <ins> When it is used: 
-1. When you need a backup for a specific purpose, like restoring to a different environment or for experimentation, a copy-only backup allows you to do so without disturbing the original backup schedule.
-2. Independent backups
-3. Migration and testing
-4. Auditing
-5. Preventing chain issues:
+1. When you need a full backup for testing, migration, or a one-time copy without disrupting your regular backup strategy.
 - <ins> When not to use copy-only backups:
 1. For regular scheduled backups
+
+-<ins> What it includes:
+- All the data in the database at the point in time the backup is taken.
+
+
+
+
+
+
+#### Reference
+['SQL Server Differential Backup'](https://sqlbak.com/blog/sql-server-differential-backup-fast-guide/)
