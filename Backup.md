@@ -128,7 +128,20 @@
 - In an e-learning platform, file backups are taken for course materials and student submissions, allowing for quick recovery of specific files in case of accidental deletions or corruption.
 - In a ticketing system, file backups are conducted for event-related documents and customer interactions, enabling quick restoration of specific files without affecting the entire ticketing database.
 
-		
+
+### Summary
+In SQL Server, various backup types serve different purposes and scenarios. Full backups provide a complete snapshot of the database, while differential backups capture changes since the last full backup. Transaction log backups allow for point-in-time recovery, and copy-only backups are useful for one-time backups without disrupting the regular backup sequence. File/filegroup backups enable selective backup and restoration of specific parts of the database. Each type has its pros and cons, making it essential to choose the right backup strategy based on the system's requirements and data protection needs.
+
+<ins> Table of Backup Types:
+| Backup Type          | When to Use                                                                 | What it Includes                                           | Pros                                                                 | Cons                                                                 | Real-World Scenario Examples                                                                 |
+|----------------------|-----------------------------------------------------------------------------|------------------------------------------------------------|----------------------------------------------------------------------|----------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| Full Backup          | When a complete copy of all data is needed                                  | Entire database, all data and objects                       | Complete snapshot, simplifies recovery, essential for disaster recovery | Time-consuming, requires significant storage space, not suitable for frequent backups | Banking system: weekly full backup; e-learning platform: end-of-semester backup; ticketing system: daily backup |
+| Differential Backup  | When a balance between storage efficiency and recovery time is needed       | Data changed since the last full backup                     | Faster than full backups, requires less storage, simplifies recovery | Requires both last full and latest differential backup for recovery, can grow in size over time | Banking system: daily differential backup; e-learning platform: nightly backup; ticketing system: every few hours |
+| Transaction Log Backup | For point-in-time recovery, especially after data corruption or accidental changes | All transactions since the last transaction log backup      | Allows recovery to a specific moment, reduces potential data loss   | Requires full backup as base, can complicate restoration process     | Banking system: every 5 minutes; e-learning platform: every 10 minutes; ticketing system: every 2 minutes |
+| Copy-Only Backup     | For testing, migration, or one-time copy without disrupting regular backups | All data in the database at the point in time of backup     | Does not interfere with regular backups, useful for one-time backups | Not suitable for regular backups, can lead to confusion if misused   | Banking system: before software upgrade; e-learning platform: before server migration; ticketing system: before major event |
+| File/Filegroup Backup | To protect specific files or filegroups within a database                | Specific files or filegroups within the database            | Selective backup and restoration, reduces backup size and time      | Requires careful management, recovery can be complex                 | Banking system: specific account-related files; e-learning platform: course materials; ticketing system: event-related documents |
+
+## Part 2: Practical Task
 
 
 
@@ -137,3 +150,4 @@
 ['SQL Server Transaction Log Backup'](https://www.sqlshack.com/sql-server-transaction-log-backup/)
 ['SQL Server Copy-Only Backup'](https://www.sqlshack.com/sql-server-copy-only-backup/)
 ['SQL Server File/Filegroup Backup'](https://www.sqlshack.com/sql-server-file-filegroup-backup/)
+['File Backup'](https://learn.microsoft.com/en-us/sql/relational-databases/backup-restore/full-file-backups-sql-server?view=sql-server-ver17)
