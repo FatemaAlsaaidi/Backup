@@ -103,6 +103,14 @@
 **5. File/Filegroup Backup:** Captures specific files or filegroups within a database.
 ![FileBackup](img/FileBackup.PNG)
 
+- <ins>When it is used:
+	
+	- used to protect data by creating copies of files and folders to another location. These backups are used to recover data if it is lost, damaged, or corrupted, due to events like accidental deletion, hardware failure, or cyberattacks
+
+- <ins> What it includes:
+	- A file backup typically includes user-created and downloaded files, such as documents, spreadsheets, presentations, videos, and photos. It does not include operating system files, program files, or drivers, which are part of a system backup. 
+	- File backups focus on protecting individual files or folders, making it easier to restore specific data points in case of accidental deletion or loss.
+
 
 
 
