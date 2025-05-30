@@ -203,6 +203,9 @@ In SQL Server, various backup types serve different purposes and scenarios. Full
    - `DISK = 'C:\Backups\YourDatabaseName_FileGroup.bak'`: Specify the path where the filegroup backup file will be stored.
    - The other options are similar to those used in the full backup command.
 
+real -world scenario examples for each backup type:
+
+!['sql script of different types of backup'](img/1.JPG)
 
 
 #### Reference
