@@ -207,7 +207,46 @@ real -world scenario example for each backup type:
 
 !['sql script of different types of backup'](img/1.JPG)
 
-
+## Part 3: Real-World Scenario Simulation 
+Scenario: 
+You are a database admin for a hospital system. 
+On Sunday you take a full backup. Each night, you take a differential backup. Every hour, you 
+back up the transaction log. 
+Challenge Task: 
+Design a backup schedule for this hospital system using SQL scripts. Assume the database is 
+called HospitalDB. Include: 
+• Backup frequency 
+• Type of backup for each day/time 
+• Folder naming and file versioning convention 
+Deliverable: 
+A .sql file or script plan + brief description of the strategy
+### Backup Schedule for Hospital System Database (HospitalDB)
+```sql
+-- Full Backup on Sunday
+BACKUP DATABASE HospitalDB
+TO DISK = 'C:\Backups\HospitalDB_Full_' + CONVERT(VARCHAR(20), GETDATE(), 112) + '.bak'
+WITH FORMAT, INIT, SKIP, NOREWIND, NOUNLOAD, STATS = 10;
+-- Differential Backup every night (Monday to Saturday)
+DECLARE @currentDate VARCHAR(20) = CONVERT(VARCHAR(20), GETDATE(), 112);
+BACKUP DATABASE HospitalDB
+TO DISK = 'C:\Backups\HospitalDB_Diff_' + @currentDate + '.bak'
+WITH DIFFERENTIAL, FORMAT, INIT, SKIP, NOREWIND, NOUNLOAD, STATS = 10;
+-- Transaction Log Backup every hour
+DECLARE @currentTime VARCHAR(20) = CONVERT(VARCHAR(20), GETDATE(), 108);
+BACKUP LOG HospitalDB
+TO DISK = 'C:\Backups\HospitalDB_Log_' + @currentDate + '_' + @currentTime + '.trn'
+WITH FORMAT, INIT, SKIP, NOREWIND, NOUNLOAD, STATS = 10;
+```
+### Explanation of the Backup Schedule
+- **Full Backup**: 
+  - Performed every Sunday to capture the entire database state.
+  - The backup file is named with the date of the backup for easy identification (e.g., `HospitalDB_Full_20231001.bak`).
+- **Differential Backup**: 
+  - Performed every night from Monday to Saturday to capture changes since the last full backup.
+  - The backup file is named with the date of the backup (e.g., `HospitalDB_Diff_20231001.bak`).
+- **Transaction Log Backup**: 
+  - Performed every hour to capture all transactions that have occurred since the last transaction log backup.
+  - The backup file is named with the date and time of the backup for precise tracking (e.g., `HospitalDB_Log_20231001_120000.trn`).
 #### Reference
 ['SQL Server Differential Backup'](https://sqlbak.com/blog/sql-server-differential-backup-fast-guide/)
 ['SQL Server Transaction Log Backup'](https://www.sqlshack.com/sql-server-transaction-log-backup/)
