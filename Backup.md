@@ -122,6 +122,12 @@
 		- Recovery can be more complex if multiple files or filegroups are involved.
 		- Not suitable for complete database recovery, as it only captures specific parts of the database.
 
+-<ins> Real-world scenario (e.g., banking system, e-learning platform, ticketing system):
+
+- In a banking system, a file backup is performed for specific account-related files to ensure that critical data can be restored quickly without needing to restore the entire database.
+- In an e-learning platform, file backups are taken for course materials and student submissions, allowing for quick recovery of specific files in case of accidental deletions or corruption.
+- In a ticketing system, file backups are conducted for event-related documents and customer interactions, enabling quick restoration of specific files without affecting the entire ticketing database.
+
 		
 
 
