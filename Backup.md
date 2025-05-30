@@ -141,7 +141,67 @@ In SQL Server, various backup types serve different purposes and scenarios. Full
 | Copy-Only Backup     | For testing, migration, or one-time copy without disrupting regular backups | All data in the database at the point in time of backup     | Does not interfere with regular backups, useful for one-time backups | Not suitable for regular backups, can lead to confusion if misused   | Banking system: before software upgrade; e-learning platform: before server migration; ticketing system: before major event |
 | File/Filegroup Backup | To protect specific files or filegroups within a database                | Specific files or filegroups within the database            | Selective backup and restoration, reduces backup size and time      | Requires careful management, recovery can be complex                 | Banking system: specific account-related files; e-learning platform: course materials; ticketing system: event-related documents |
 
-## Part 2: Practical Task
+## Part 2: Perform Backup Operations in sql server
+### Backup Operations
+1. **Full Backup**:
+   ```sql
+   BACKUP DATABASE YourDatabaseName
+   TO DISK = 'C:\Backups\YourDatabaseName_Full.bak'
+   WITH FORMAT, INIT, SKIP, NOREWIND, NOUNLOAD, STATS = 10;
+   ```
+	Explaination :
+   - `YourDatabaseName`: Replace with the name of your database.
+   - `DISK = 'C:\Backups\YourDatabaseName_Full.bak'`: Specify the path where the backup file will be stored.
+   - `WITH FORMAT, INIT, SKIP, NOREWIND, NOUNLOAD, STATS = 10`: These options control how the backup is performed:
+	 - `FORMAT`: Creates a new media set.
+	 - `INIT`: Overwrites existing backup files.
+	 - `SKIP`: Skips checks for existing media sets.
+	 - `NOREWIND`: Does not rewind the tape after the backup.
+	 - `NOUNLOAD`: Does not unload the tape after the backup.
+	 - `STATS = 10`: Displays progress information every 10 percent.
+2. **Differential Backup**:
+   ```sql
+   BACKUP DATABASE YourDatabaseName
+   TO DISK = 'C:\Backups\YourDatabaseName_Diff.bak'
+   WITH DIFFERENTIAL, FORMAT, INIT, SKIP, NOREWIND, NOUNLOAD, STATS = 10;
+   ```
+	Explaination :
+	   - `DIFFERENTIAL`: Specifies that this is a differential backup, capturing only changes since the last full backup.
+	   - The other options are similar to those used in the full backup command.
+
+3. **Transaction Log Backup**:
+   ```sql
+   BACKUP LOG YourDatabaseName
+   TO DISK = 'C:\Backups\YourDatabaseName_Log.trn'
+   WITH FORMAT, INIT, SKIP, NOREWIND, NOUNLOAD, STATS = 10;
+   ```
+	Explaination :
+   - `LOG`: Specifies that this is a transaction log backup.
+   - `YourDatabaseName`: Replace with the name of your database.
+   - `DISK = 'C:\Backups\YourDatabaseName_Log.trn'`: Specify the path where the transaction log backup file will be stored.
+   - The other options are similar to those used in the full backup command.
+	
+4. **Copy-Only Backup**:
+   ```sql
+   BACKUP DATABASE YourDatabaseName
+   TO DISK = 'C:\Backups\YourDatabaseName_CopyOnly.bak'
+   WITH COPY_ONLY, FORMAT, INIT, SKIP, NOREWIND, NOUNLOAD, STATS = 10;
+   ```
+	Explaination :
+   - `COPY_ONLY`: Specifies that this is a copy-only backup, which does not affect the regular backup sequence.
+   - The other options are similar to those used in the full backup command.
+	
+5. **File/Filegroup Backup**:
+   ```sql
+   BACKUP DATABASE YourDatabaseName
+   FILEGROUP = 'YourFileGroupName'
+   TO DISK = 'C:\Backups\YourDatabaseName_FileGroup.bak'
+   WITH FORMAT, INIT, SKIP, NOREWIND, NOUNLOAD, STATS = 10;
+   ```
+	Explaination :
+   - `FILEGROUP = 'YourFileGroupName'`: Replace with the name of the filegroup you want to back up.
+   - `DISK = 'C:\Backups\YourDatabaseName_FileGroup.bak'`: Specify the path where the filegroup backup file will be stored.
+   - The other options are similar to those used in the full backup command.
 
 
 
@@ -151,3 +211,4 @@ In SQL Server, various backup types serve different purposes and scenarios. Full
 ['SQL Server Copy-Only Backup'](https://www.sqlshack.com/sql-server-copy-only-backup/)
 ['SQL Server File/Filegroup Backup'](https://www.sqlshack.com/sql-server-file-filegroup-backup/)
 ['File Backup'](https://learn.microsoft.com/en-us/sql/relational-databases/backup-restore/full-file-backups-sql-server?view=sql-server-ver17)
+['Backup'](https://learn.microsoft.com/en-us/sql/t-sql/statements/backup-transact-sql?view=sql-server-ver17)
