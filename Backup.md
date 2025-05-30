@@ -100,9 +100,14 @@
 	- In an e-learning platform, a copy-only backup is created before migrating to a new server, allowing for a snapshot of the database without disrupting the ongoing backup process.
 	- In a ticketing system, a copy-only backup is performed before a major event to ensure that all ticket sales data is captured without interfering with the regular backup routine.
 
+**5. File/Filegroup Backup:** Captures specific files or filegroups within a database.
+![FileBackup](img/FileBackup.PNG)
 
 
 
 
 #### Reference
 ['SQL Server Differential Backup'](https://sqlbak.com/blog/sql-server-differential-backup-fast-guide/)
+['SQL Server Transaction Log Backup'](https://www.sqlshack.com/sql-server-transaction-log-backup/)
+['SQL Server Copy-Only Backup'](https://www.sqlshack.com/sql-server-copy-only-backup/)
+['SQL Server File/Filegroup Backup'](https://www.sqlshack.com/sql-server-file-filegroup-backup/)
