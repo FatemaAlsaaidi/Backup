@@ -247,6 +247,9 @@ WITH FORMAT, INIT, SKIP, NOREWIND, NOUNLOAD, STATS = 10;
 - **Transaction Log Backup**: 
   - Performed every hour to capture all transactions that have occurred since the last transaction log backup.
   - The backup file is named with the date and time of the backup for precise tracking (e.g., `HospitalDB_Log_20231001_120000.trn`).
+
+### Plane Description
+![Backup Schedule Plan](img/BackupRealWorldScenario.jpg)
 #### Reference
 ['SQL Server Differential Backup'](https://sqlbak.com/blog/sql-server-differential-backup-fast-guide/)
 ['SQL Server Transaction Log Backup'](https://www.sqlshack.com/sql-server-transaction-log-backup/)
